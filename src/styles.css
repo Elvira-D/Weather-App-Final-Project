@@ -3,7 +3,6 @@ body {
 }
 
 button {
-    
     display: inline-block;
     border: 5px solid #0faf9a;
     border-radius: 10px;
@@ -38,7 +37,6 @@ input::placeholder {
 }
 
 .search {
-    
     display: inline-block;
     border: 5px solid #0faf9a;
     border-radius: 10px;
@@ -58,9 +56,9 @@ input::placeholder {
 
 .current-location {
     text-align: center;
-    border: 5px solid #ff5882;
+    border: 10px solid #ff5882;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 25%;
     margin-right: 25%;
     padding: 20px;
