@@ -85,6 +85,21 @@ p a {
     color: #ff5882;
 }
 
+#description {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#precipitation {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#wind-speed {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .name {
     display: inline;
     margin: 0 auto;
