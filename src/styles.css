@@ -3,15 +3,16 @@ body {
 }
 
 button {
-    /* display: block; */
+    
+    display: inline-block;
     border: 5px solid #0faf9a;
     border-radius: 10px;
     width: 180px;
     height: 150%;
-    padding: 5px;
+    padding: 4px;
     color: #0faf9a;
-    font-weight: 900;
-    margin-left: 30px;
+    font-weight: 700;
+    margin-left: 10px;
     margin-bottom: 10px;
     margin-top: 20px;
 }
@@ -23,7 +24,7 @@ button:hover {
 
 .city {
     font-size: x-large;
-    font-weight: 900;
+    font-weight: 700;
     border: 5px solid #0faf9a;
     border-radius: 50%;
     width: 100px;
@@ -37,13 +38,15 @@ input::placeholder {
 }
 
 .search {
+    
+    display: inline-block;
     border: 5px solid #0faf9a;
     border-radius: 10px;
-    width: 150px;
+    width: 160px;
     height: 150%;
-    padding: 10px;
+    padding: 5px;
     color: #0faf9a;
-    font-weight: 900;
+    font-weight: 700;
     margin-left: 12px;
 }
 
