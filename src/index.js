@@ -1,5 +1,8 @@
 function displayTemperature(response) {
-console.log(response.data.main.temp)
+let temperatureElement = document.querySelector("#current-temperature");
+let cityElement = document.querySelector("#city");
+    temperatureElement.innerHTML = `Current Temperature ${Math.round(response.data.main.temp)}°`;
+cityElement.innerHTML = response.data.name; 
 }
 
 let apiKey = "4820a880cf32920cd905490b92fa0630";
