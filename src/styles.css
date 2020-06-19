@@ -1,0 +1,97 @@
+body {
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+button {
+    display: block;
+    border: 5px solid #0faf9a;
+    width: 150px;
+    height: 150%;
+    padding: 5px;
+    color: #0faf9a;
+    font-weight: 900;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+button:hover {
+    opacity: 0.7;
+    color: #ff5882;
+}
+
+.city {
+    font-size: x-large;
+    font-weight: 900;
+    border: 5px solid #0faf9a;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+input::placeholder {
+    font-size: 15px;
+    text-align: center;
+    color: #0faf9a;
+}
+
+.search {
+    border: 5px solid #0faf9a;
+    width: 150px;
+    height: 150%;
+    padding: 10px;
+    color: #0faf9a;
+    font-weight: 900;
+    margin-left: 30px;
+}
+
+.date-time {
+    text-align: center;
+    color: #ffa726;
+    font-size: 35px;
+}
+
+.current-location {
+    text-align: center;
+    border: 5px solid #ff5882;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 20px;
+}
+
+div.current-location h2 {
+    color: #ff5882;
+    font-size: 40px;
+}
+
+div.current-location p {
+    color: #ff5882;
+    font-size: 24px;
+}
+
+.row {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+    color: #0faf9a;
+    font-size: 24px;
+}
+
+p a {
+    color: #ff5882;
+}
+
+.name {
+    display: inline;
+    margin: 0 auto;
+    color: #ff5882;
+}
+
+.github {
+    display: inline;
+    margin-left: 10px;
+}
