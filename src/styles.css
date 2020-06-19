@@ -88,6 +88,12 @@ p a {
 #description {
     margin-top: 0;
     margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+#humidity {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #precipitation {
