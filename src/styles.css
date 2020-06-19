@@ -56,7 +56,7 @@ input::placeholder {
 
 .current-location {
     text-align: center;
-    border: 10px solid #ff5882;
+    border: 5px solid #ff5882;
     border-radius: 5px;
     margin-top: 10px;
     margin-left: 25%;
