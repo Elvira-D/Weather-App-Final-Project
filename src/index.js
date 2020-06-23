@@ -36,7 +36,7 @@ function displayTemperature(response) {
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = `Humidity ${(response.data.main.humidity)}%`;
     windSpeed.innerHTML = `Wind Speed ${Math.round(response.data.wind.speed)} km/h`;
-    iconElement.innerHTML = `http://openweathermap.org/img/wn/10d@2x.png`;
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 }
 
