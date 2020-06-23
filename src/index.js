@@ -36,8 +36,8 @@ function displayTemperature(response) {
 
     temperatureElement.innerHTML = `Current Temperature ${Math.round(celsiusTemperature)}°`;
     cityElement.innerHTML = response.data.name;
-    minTemp.innerHTML = Math.round(minCelsiusTemperature);
-    maxTemp.innerHTML = Math.round(maxCelsiusTemperature);
+    minTemp.innerHTML = `${Math.round(minCelsiusTemperature)}°`;
+    maxTemp.innerHTML = `${Math.round(maxCelsiusTemperature)}°`;
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = `Humidity ${(response.data.main.humidity)}%`;
     windSpeed.innerHTML = `Wind Speed ${Math.round(response.data.wind.speed)} km/h`;
@@ -66,18 +66,25 @@ function displayFahrenheitTemperature(event) {
     let minFahrenheitTemperature = (minCelsiusTemperature * 9 / 5) + 32;
     let maxFahrenheitTemperature = (maxCelsiusTemperature * 9 / 5) + 32;
     
-
     let temperatureElement = document.querySelector("#current-temperature");
     let minTemperatureElement = document.querySelector("#min");
     let maxTemperatureElement = document.querySelector("#max");
     
-
     temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
     minTemperatureElement.innerHTML = `${Math.round(minFahrenheitTemperature)}°F`;
     maxTemperatureElement.innerHTML = `${Math.round(maxFahrenheitTemperature)}°F`;
-    
-    
-    
+           
+}
+
+function displayCelsiusTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temperature");
+    let minTemperatureElement = document.querySelector("#min");
+    let maxTemperatureElement = document.querySelector("#max");
+
+    temperatureElement.innerHTML = `Current Temperature ${Math.round(celsiusTemperature)}°C`;
+    minTemperatureElement.innerHTML = `${Math.round(minCelsiusTemperature)}°C`;
+    maxTemperatureElement.innerHTML = `${Math.round(maxCelsiusTemperature)}°C`;
 }
 
 let celsiusTemperature = null;
@@ -89,5 +96,8 @@ form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#F");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature)
+
+let celsiusLink = document.querySelector("#C");
+celsiusLink.addEventListener("click", displayCelsiusTemperature)
 
 search("New York");
