@@ -29,10 +29,15 @@ function displayTemperature(response) {
     let humidityElement = document.querySelector("#humidity");
     let windSpeed = document.querySelector("#wind-speed");
     let iconElement = document.querySelector("#icon");
-    temperatureElement.innerHTML = `Current Temperature ${Math.round(response.data.main.temp)}°`;
+
+    celsiusTemperature = response.data.main.temp;
+    minCelsiusTemperature = response.data.main.temp_min;
+    maxCelsiusTemperature = response.data.main.temp_max;
+
+    temperatureElement.innerHTML = `Current Temperature ${Math.round(celsiusTemperature)}°`;
     cityElement.innerHTML = response.data.name;
-    minTemp.innerHTML = Math.round(response.data.main.temp_min);
-    maxTemp.innerHTML = Math.round(response.data.main.temp_max);
+    minTemp.innerHTML = Math.round(minCelsiusTemperature);
+    maxTemp.innerHTML = Math.round(maxCelsiusTemperature);
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = `Humidity ${(response.data.main.humidity)}%`;
     windSpeed.innerHTML = `Wind Speed ${Math.round(response.data.wind.speed)} km/h`;
@@ -55,6 +60,34 @@ function handleSubmit(event) {
     search(cityInput.value);
 }
 
+function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+    let fahrenheitTemperature = (celsiusTemperature * 9 / 5) + 32;
+    let minFahrenheitTemperature = (minCelsiusTemperature * 9 / 5) + 32;
+    let maxFahrenheitTemperature = (maxCelsiusTemperature * 9 / 5) + 32;
+    
+
+    let temperatureElement = document.querySelector("#current-temperature");
+    let minTemperatureElement = document.querySelector("#min");
+    let maxTemperatureElement = document.querySelector("#max");
+    
+
+    temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
+    minTemperatureElement.innerHTML = `${Math.round(minFahrenheitTemperature)}°F`;
+    maxTemperatureElement.innerHTML = `${Math.round(maxFahrenheitTemperature)}°F`;
+    
+    
+    
+}
+
+let celsiusTemperature = null;
+let minCelsiusTemperature = null;
+let maxCelsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#F");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature)
+
+search("New York");
