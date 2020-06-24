@@ -107,7 +107,7 @@ search("New York");
 function currentPosition(position) {
     let apiKey = "4820a880cf32920cd905490b92fa0630";
     let latitude = position.coords.latitude;
-    console.log(position.coords.latitude);
+    
     let longitude = position.coords.longitude;
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     
