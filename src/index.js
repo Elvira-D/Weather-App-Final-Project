@@ -41,8 +41,10 @@ function displayTemperature(response) {
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = `Humidity ${(response.data.main.humidity)}%`;
     windSpeed.innerHTML = `Wind Speed ${Math.round(response.data.wind.speed)} km/h`;
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+
+    
 
 }
 
@@ -101,3 +103,20 @@ let celsiusLink = document.querySelector("#C");
 celsiusLink.addEventListener("click", displayCelsiusTemperature)
 
 search("New York");
+
+function currentPosition(position) {
+    let apiKey = "4820a880cf32920cd905490b92fa0630";
+    let latitude = position.coords.latitude;
+    console.log(position.coords.latitude);
+    let longitude = position.coords.longitude;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    
+
+    axios.get(url).then(displayTemperature);
+}
+
+let button = document.querySelector("#current-coords");
+button.addEventListener("click", currentPosition);
+
+navigator.geolocation.getCurrentPosition(currentPosition);
+
