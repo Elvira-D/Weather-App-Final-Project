@@ -44,9 +44,9 @@ function displayTemperature(response) {
     iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
-    
 
 }
+
 
 function search(city) {
     let apiKey = "4820a880cf32920cd905490b92fa0630";
@@ -104,19 +104,21 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature)
 
 search("New York");
 
+
 function currentPosition(position) {
     let apiKey = "4820a880cf32920cd905490b92fa0630";
     let latitude = position.coords.latitude;
-    
     let longitude = position.coords.longitude;
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     
-
     axios.get(url).then(displayTemperature);
 }
 
+
+function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(currentPosition);
+}
+
 let button = document.querySelector("#current-coords");
-button.addEventListener("click", currentPosition);
-
-navigator.geolocation.getCurrentPosition(currentPosition);
-
+button.addEventListener("click", getCurrentPosition);
